@@ -12,7 +12,7 @@ if [ "$user_input" = "yes" ]; then
     pkg install wget
     wget https://github.com/Baisuyy/Anime-game-Server/releases/download/dev/HSR2.3_LC_andriod.tar.gz
     echo "请稍候..."
-    if [ -s "../HSR2.3_LC_andriod.tar.gz" ];then
+    if [ -s "./HSR2.3_LC_andriod.tar.gz" ];then
         echo "下载完成"
         echo"正在解压"
         tar -zxvf HSR2.3_LC_andriod.tar.gz
