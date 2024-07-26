@@ -4,13 +4,13 @@
 echo "星穹铁道2.3版本，构建于2024.7"
 echo "当前时间: $(date '+%Y-%m-%d %H:%M:%S')"
 
-# 询问用户是否安装
+# 询问是否安装
 read -p "是否继续 (yes/no): " user_input
 
 if [ "$user_input" = "yes" ]; then
     echo "正在下载必须文件..."
     pkg install wget
-    wget https://github.com/Baisuyy/Anime-game-Server/releases/download/dev/HSR2.3_LC_andriod.tar.gz
+    wget https://github.moeyy.xyz/https://github.com/Baisuyy/Anime-game-Server/releases/download/dev/HSR2.3_LC_andriod.tar.gz
     echo "请稍候..."
     if [ -s "./HSR2.3_LC_andriod.tar.gz" ];then
         echo "下载完成"
