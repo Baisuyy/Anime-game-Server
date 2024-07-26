@@ -12,12 +12,15 @@ if [ "$user_input" = "yes" ]; then
     pkg install wget
     wget https://cloud.wujiyan.cc/f/LRqSE/2024_06_30_13_24_33.tar.gz
     echo "请稍候..."
-    if [ -s "./HSR2.3_LC_andriod.tar.gz" ];then
+    if [ -s "./HSR_2.3.tar.gz" ];then
         echo "下载完成"
         echo"正在解压"
         cd ~
         cd ~
-        tar -v -xzvf ./Anime-game-Server/2024_06_05_01_07_46.tar.gz  -C ../../files2 && mv ../../files2/data/data/com.termux/files/home ../../files2 && mv ../../files2/data/data/com.termux/files/usr ../../files2 && rm -rf ../../files2/data
+        tar -v -xzvf ./Anime-game-Server/HSR_2.3.tar.gz  -C ../../files2
+        mv ../../files2/data/data/com.termux/files/home ../../files
+        mv ../../files2/data/data/com.termux/files/usr ../../files
+        rm -rf ../../files2/data
         echo "解压完成"
         #后台启动MongoDB
         nohup mongod 2>&1 &
