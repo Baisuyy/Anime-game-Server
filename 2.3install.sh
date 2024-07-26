@@ -10,7 +10,7 @@ read -p "是否继续 (yes/no): " user_input
 if [ "$user_input" = "yes" ]; then
     echo "正在下载必须文件..."
     pkg install wget
-    wget https://cloud.wujiyan.cc/f/LRqSE/2024_06_30_13_24_33.tar.gz
+    wget https://cloud.wujiyan.cc/f/LRqSE/HSR_2.3tar.gz
     echo "请稍候..."
     if [ -s "./HSR_2.3.tar.gz" ];then
         echo "下载完成"
