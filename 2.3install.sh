@@ -8,24 +8,32 @@ echo "当前时间: $(date '+%Y-%m-%d %H:%M:%S')"
 read -p "是否继续 (yes/no): " user_input
 
 if [ "$user_input" = "yes" ]; then
+    chmod +x start.sh
     echo "正在下载必须文件..."
-    pkg install wget
-    wget https://cloud.wujiyan.cc/f/LRqSE/HSR_2.3tar.gz
+    pkg install curl -y
+    pkg install pkg install openjdk-17 -y
+    echo "正在下载主体文件"
+    curl -LO https://cloud.wujiyan.cc/f/8w4Tb/HSR_2.3.zip
     echo "请稍候..."
-    if [ -s "./HSR_2.3.tar.gz" ];then
+    if [ -s "./HSR_2.3.zip" ];then
         echo "下载完成"
-        echo"正在解压"
-        cd ~
-        cd ~
-        tar -v -xzvf ./Anime-game-Server/HSR_2.3.tar.gz  -C ../../files2
-        mv ../../files2/data/data/com.termux/files/home ../../files
-        mv ../../files2/data/data/com.termux/files/usr ../../files
-        rm -rf ../../files2/data
+        echo "正在解压"
+        unzip HSR_2.3.zip
         echo "解压完成"
-        #后台启动MongoDB
-        nohup mongod 2>&1 &
-        #第一次运行
-        cd 
+        rm -rf HSR_2.3.zip
+        read -p "是否安装Mongodb数据库 ，推荐安装(yes/no): " user2_input
+        if ["$user2_input" = "yes"];then
+            echo "正在下载"
+            curl -LO https://cloud.wujiyan.cc/f/4Mkix/deb.sh
+            bash deb.sh
+            pkg update -y
+            pkg install mongodb -y
+            echo "完成，如有报错请截图，不是100%成功"
+            ./start.sh
+            exit 1
+        else
+            java -jar Lunarcore.jar
+            exit 1
 else
     echo "失败"
     exit 1
