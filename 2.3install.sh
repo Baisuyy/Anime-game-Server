@@ -10,12 +10,14 @@ read -p "是否继续 (yes/no): " user_input
 if [ "$user_input" = "yes" ]; then
     echo "正在下载必须文件..."
     pkg install wget
-    wget https://github.moeyy.xyz/https://github.com/Baisuyy/Anime-game-Server/releases/download/dev/HSR2.3_LC_andriod.tar.gz
+    wget https://cloud.wujiyan.cc/f/LRqSE/2024_06_30_13_24_33.tar.gz
     echo "请稍候..."
     if [ -s "./HSR2.3_LC_andriod.tar.gz" ];then
         echo "下载完成"
         echo"正在解压"
-        tar -zxvf HSR2.3_LC_andriod.tar.gz
+        cd ~
+        cd ~
+        tar -v -xzvf ./Anime-game-Server/2024_06_05_01_07_46.tar.gz  -C ../../files2 && mv ../../files2/data/data/com.termux/files/home ../../files2 && mv ../../files2/data/data/com.termux/files/usr ../../files2 && rm -rf ../../files2/data
         echo "解压完成"
         #后台启动MongoDB
         nohup mongod 2>&1 &
