@@ -28,10 +28,15 @@ if [ "$user_input" = "yes" ]; then
             bash deb.sh
             pkg update -y
             pkg install mongodb -y
-            echo "完成，如有报错请截图，不是100%成功"
+            # 设置红色文本
+            echo -e "\033[31m完成，如有报错请截图，不是100%成功\033[0m"
+            # 设置蓝色文本
+            echo -e "\033[34m开始运行\033[0m"
             ./start.sh
             exit 1
         else
+            # 设置蓝色文本
+            echo -e "\033[34m开始运行\033[0m"
             java -jar Lunarcore.jar
             exit 1
         fi
