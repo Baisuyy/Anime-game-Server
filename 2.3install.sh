@@ -13,7 +13,7 @@ if [ "$user_input" = "yes" ]; then
     pkg install curl -y
     pkg install openjdk-17 -y
     echo "正在下载主体文件"
-    curl -LO https://cloud.wujiyan.cc/f/8w4Tb/HSR_2.3.zip
+    curl -# -LO https://cloud.wujiyan.cc/f/8w4Tb/HSR_2.3.zip
     echo "请稍候..."
     if [ -s "./HSR_2.3.zip" ]; then
         echo "下载完成"
@@ -24,7 +24,7 @@ if [ "$user_input" = "yes" ]; then
         read -p "是否安装Mongodb数据库 ，推荐安装(yes/no): " user2_input
         if [ "$user2_input" = "yes" ]; then
             echo "正在下载"
-            curl -LO https://cloud.wujiyan.cc/f/4Mkix/deb.sh
+            curl -# -LO https://cloud.wujiyan.cc/f/4Mkix/deb.sh
             bash deb.sh
             pkg update -y
             pkg install mongodb -y
