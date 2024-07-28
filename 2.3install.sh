@@ -11,18 +11,18 @@ if [ "$user_input" = "yes" ]; then
     chmod +x start.sh
     echo "正在下载必须文件..."
     pkg install curl -y
-    pkg install pkg install openjdk-17 -y
+    pkg install openjdk-17 -y
     echo "正在下载主体文件"
     curl -LO https://cloud.wujiyan.cc/f/8w4Tb/HSR_2.3.zip
     echo "请稍候..."
-    if [ -s "./HSR_2.3.zip" ];then
+    if [ -s "./HSR_2.3.zip" ]; then
         echo "下载完成"
         echo "正在解压"
         unzip HSR_2.3.zip
         echo "解压完成"
         rm -rf HSR_2.3.zip
         read -p "是否安装Mongodb数据库 ，推荐安装(yes/no): " user2_input
-        if ["$user2_input" = "yes"];then
+        if [ "$user2_input" = "yes" ]; then
             echo "正在下载"
             curl -LO https://cloud.wujiyan.cc/f/4Mkix/deb.sh
             bash deb.sh
@@ -34,10 +34,11 @@ if [ "$user_input" = "yes" ]; then
         else
             java -jar Lunarcore.jar
             exit 1
-else
-    echo "失败"
-    exit 1
-fi
+        fi
+    else
+        echo "下载失败"
+        exit 1
+    fi
 else
     exit 1
 fi
