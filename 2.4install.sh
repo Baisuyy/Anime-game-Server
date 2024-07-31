@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 说明信息和当前时间
-echo "星穹铁道2.3版本，构建于2024.7"
+echo "星穹铁道2.4版本，构建于2024.7.32"
 echo "当前时间: $(date '+%Y-%m-%d %H:%M:%S')"
 
 # 询问是否安装
@@ -13,6 +13,7 @@ if [ "$user_input" = "yes" ]; then
     pkg install curl -y
     pkg install openjdk-17 -y
     echo "正在下载主体文件"
+    #链接请及时更改
     curl -# -LO https://cloud.wujiyan.cc/f/8w4Tb/HSR_2.3.zip
     echo "请稍候..."
     if [ -s "./HSR_2.3.zip" ]; then
