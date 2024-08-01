@@ -25,10 +25,9 @@ if [ "$user_input" = "yes" ]; then
         read -p "是否安装Mongodb数据库 ，推荐安装(yes/no): " user2_input
         if [ "$user2_input" = "yes" ]; then
             echo "正在下载"
-            curl -# -LO https://cloud.wujiyan.cc/f/4Mkix/deb.sh
-            bash deb.sh
+            curl -# -LO https://cloud.wujiyan.cc/f/zdRSn/mongodb_4.2.9_aarch64.deb
+            dpkg -i mongodb_4.2.9_aarch64.deb
             pkg update -y
-            pkg install mongodb -y
             echo -e "\033[31m完成，如有报错请截图，不是100%成功\033[0m"
             echo -e "\033[34m开始运行\033[0m"
             ./start.sh
