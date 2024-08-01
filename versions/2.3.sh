@@ -37,7 +37,7 @@ if [ "$user_input" = "yes" ]; then
         else
             # 设置蓝色文本
             echo -e "\033[34m开始运行\033[0m"
-            java -jar Lunarcore.jar
+            java -jar LunarCore.jar
             exit 1
         fi
     else
