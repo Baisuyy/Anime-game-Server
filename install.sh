@@ -77,7 +77,7 @@ function LunarCore {
         chmod +x start.sh
         install_packages
 
-        download_file "https://cloud.wujiyan.cc/f/Wyehy/HSR_2.4.zip" "HSR_2.4.zip"
+        download_file "https://cloud.wujiyan.cc/f/kyvFn/HSR_2.4.zip" "HSR_2.4.zip"
 
         if [ ! -s "./HSR_2.4.zip" ]; then
             dialog --msgbox "下载失败" 10 50
@@ -129,7 +129,7 @@ function main {
     while true; do
         exec 3>&1
         selection=$(dialog --menu "选择菜单(Cancel/Esc退出)：" 15 50 3 \
-            1 "⭐️·穹铁道 修复中" \
+            1 "⭐️·穹铁道 2.4" \
             2 "⭕️神      不可用" \
             3 "绝蛆0️⃣    不可用"\
             2>&1 1>&3)
