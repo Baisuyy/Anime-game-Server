@@ -1,4 +1,5 @@
 # Anime-game-Server
+文件链接失效，等2.5 
 只是储存  
 基于[LunarCore](https://github.com/Melledy/LunarCore)  
 termux的**Mongodb**安装方法来源于https://github.com/its-pointless/its-pointless.github.io  
